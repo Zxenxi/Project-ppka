@@ -1,0 +1,43 @@
+body {
+      background-color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .section-berita {
+      padding: 70px 0;
+      background-color: #f8f9fa;
+    }
+
+    .card-berita {
+      border: none;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .card-berita:hover {
+      transform: translateY(-5px);
+    }
+
+    .berita-image {
+      height: 200px;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .berita-meta {
+      font-size: 14px;
+      color: #888;
+    }
+
+    .berita-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .berita-desc {
+      font-size: 15px;
+      color: #555;
+    }

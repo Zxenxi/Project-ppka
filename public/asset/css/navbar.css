@@ -1,0 +1,26 @@
+.navbar {
+  background-color: #ffffff;
+}
+
+.navbar-brand img {
+  height: 40px;
+}
+
+.navbar-nav .nav-link {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--primary-color);
+}
+.btn-orange {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+}
+
+.btn-orange:hover {
+  background-color: #d94b24;
+  color: white;
+}

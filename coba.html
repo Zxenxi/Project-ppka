@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard PPKA</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+
+  <style>
+    :root {
+      --primary-color: #f95f35;
+      --secondary-color: #fff0e9;
+      --text-dark: #212529;
+      --text-muted: #6c757d;
+    }
+
+    body {
+      background-color: white;
+      color: var(--text-dark);
+    }
+
+    .navbar {
+      background-color: #ffffff;
+    }
+
+    .navbar-brand img {
+      height: 40px;
+    }
+
+    .navbar-nav .nav-link {
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: var(--primary-color);
+    }
+
+    .hero {
+      padding: 60px 0;
+      background: linear-gradient(to right, #ffffff, var(--secondary-color));
+    }
+
+    .hero h1 {
+      font-weight: 700;
+    }
+
+    .highlight {
+      color: var(--primary-color);
+    }
+
+    .hero img {
+      max-width: 120%;
+      height: auto;
+    }
+
+    .btn-orange {
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+    }
+
+    .btn-orange:hover {
+      background-color: #d94b24;
+      color: white;
+    }
+
+    .section-layanan {
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+    .section-layanan .card {
+      background-color: white;
+      color: var(--text-dark);
+      border-radius: 12px;
+      border: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .section-layanan .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    }
+
+    .section-layanan .icon {
+      font-size: 40px;
+      color: var(--primary-color);
+      margin-bottom: 15px;
+    }
+
+    .footer {
+      background-color: #ffffff;
+      padding: 40px 0;
+      border-top: 1px solid #dee2e6;
+      color: var(--text-muted);
+    }
+
+    .footer a {
+      color: var(--text-dark);
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      color: var(--primary-color);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="#"><img src="public/asset/logo.png" alt="Logo PPKA" /></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav me-3">
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Tentang Kami</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Layanan</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Berita</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Hubungi Kami</a></li>
+        </ul>
+      </div>
+      <a class="btn btn-orange" href="#">Contact Us</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero text-center text-lg-start">
+    <div class="container d-flex flex-column flex-lg-row align-items-center justify-content-center">
+      <div class="ps-3 mb-5 mb-lg-0 col-lg-6">
+        <h1>
+          PPKA <span class="highlight">Siap</span> Mewujudkan<br />
+          Masa Depan <strong><span class="highlight">Karier</span> Anda</strong>
+        </h1>
+        <p class="text-muted my-3">
+          Pusat Pengembangan Karier (PPKA) hadir untuk mendampingi mahasiswa dan alumni<br />
+          dalam meraih peluang kerja terbaik melalui layanan karier yang terintegrasi.
+        </p>
+        <a href="#" class="btn btn-orange">Let's get started!</a>
+      </div>
+      <div class="pe-3 col-lg-5 text-center">
+        <img src="public/asset/backgroundhome.png" class="img-fluid" alt="Illustration" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Layanan Kami -->
+  <section class="py-5 section-layanan">
+    <div class="container">
+      <h3 class="text-center mb-5 text-white fw-bold" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.4);">Layanan Kami</h3>
+
+      <div class="row g-4">
+        <div class="col-md-4 layanan-card">
+          <div class="card h-100 text-center p-4">
+            <div class="icon"><i class="bi bi-graph-up-arrow"></i></div>
+            <h5 class="card-title">Tracer Study</h5>
+            <p class="card-text">
+              Membantu mengumpulkan data alumni untuk evaluasi dan peningkatan kualitas pendidikan serta hubungan antara kampus dan dunia kerja.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4 layanan-card">
+          <div class="card h-100 text-center p-4">
+            <div class="icon"><i class="bi bi-person-workspace"></i></div>
+            <h5 class="card-title">Pelatihan Karir</h5>
+            <p class="card-text">
+              Memberikan pelatihan seperti pembuatan CV, teknik wawancara, dan pengembangan soft skill bagi mahasiswa dan alumni.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4 layanan-card">
+          <div class="card h-100 text-center p-4">
+            <div class="icon"><i class="bi bi-briefcase-fill"></i></div>
+            <h5 class="card-title">Informasi Lowongan Kerja</h5>
+            <p class="card-text">
+              Menyediakan informasi lowongan kerja terbaru dan membuka akses alumni terhadap perusahaan-perusahaan mitra.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <img src="public/asset/logo.png" alt="Logo PPKA" style="height: 50px;" class="mb-2" />
+          <p class="text-black">Pusat Pengembangan Karier membantu mahasiswa dan alumni dalam meraih karier impian mereka.</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h5 class="text-black">Menu</h5>
+          <ul class="list-unstyled">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Tentang Kami</a></li>
+            <li><a href="#">Layanan</a></li>
+            <li><a href="#">Hubungi Kami</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h5 class="text-black">Follow Us</h5>
+          <a href="#" class="me-3 fs-5"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="me-3 fs-5"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="me-3 fs-5"><i class="bi bi-twitter-x"></i></a>
+        </div>
+      </div>
+      <div class="text-center text-black mt-3">
+        <p class="mb-0">© 2023 Copyright by S Developers. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

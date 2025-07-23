@@ -1,0 +1,11 @@
+:root {
+  --primary-color: #f95f35;
+  --secondary-color: #fff0e9;
+  --text-dark: #212529;
+  --text-muted: #6c757d;
+}
+
+body {
+  background-color: white;
+  color: var(--text-dark);
+}
