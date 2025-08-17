@@ -73,6 +73,11 @@
         <i class="bi bi-envelope"></i> Pesan Masuk
       </a>
     </li>
+    <li>
+      <a href="{{ route('admin.tracer.index') }}" class="nav-link text-white menu-item">
+        <i class="bi bi-graph-up"></i> Tracer Study
+      </a>
+    </li>
   </ul>
   <hr class="text-white">
   <a href="{{ route('logout') }}" class="btn btn-orange w-100">

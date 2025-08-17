@@ -10,12 +10,9 @@ class Tracer extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nama',
-        'tahun_lulus',
-        'email',
-        'no_hp',
-        'status',
-        'instansi',
-        'pesan',
+        'title',
+        'description',
+        'form_link',
+        'is_active',
     ];
 }
