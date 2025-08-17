@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\LowonganKerjaController;
+use App\Http\Controllers\DashboardLowonganKerjaController;
 use App\Http\Controllers\HubungiController;
 use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\DashboardBeritaController;
 use App\Http\Controllers\TracerController;
 use App\Http\Controllers\PesanController;
 
@@ -25,7 +25,7 @@ Route::get('/layanan', function () {
 
 Route::resource('/hubungi', HubungiController::class);
 
-Route::get('/berita', [DashboardBeritaController::class, 'index'])->name('dashboard.berita');
+Route::get('/lowongan-kerja', [DashboardLowonganKerjaController::class, 'index'])->name('dashboard.lowongan-kerja');
 
 
 Route::get('/login', [AdminAuthController::class, 'showLogin'])->name('login');
@@ -44,7 +44,7 @@ Route::middleware(['auth'])->group(function () {
 Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::get('/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
 });
-Route::resource('admin/berita', \App\Http\Controllers\BeritaController::class);
+Route::resource('admin/lowongan-kerja', LowonganKerjaController::class)->names('lowongan-kerja');
 
 Route::get('/admin/pesan', [PesanController::class, 'index'])->name('hubungi.admin');
 Route::delete('/admin/pesan/{id}', [PesanController::class, 'destroy'])->name('pesan.destroy');

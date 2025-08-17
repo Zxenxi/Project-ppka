@@ -1,8 +1,9 @@
 <?php
 
-// app/Http/Controllers/AdminController.php
-namespace App\Http\Controllers;
+// app/Http/Controllers/Admin/AdminController.php
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller

@@ -64,8 +64,8 @@
       </a>
     </li>
     <li>
-      <a href="{{ route('berita.create') }}" class="nav-link text-white menu-item">
-        <i class="bi bi-newspaper"></i> Berita
+      <a href="{{ route('lowongan-kerja.create') }}" class="nav-link text-white menu-item">
+        <i class="bi bi-newspaper"></i> Lowongan Pekerjaan
       </a>
     </li>
     <li>
