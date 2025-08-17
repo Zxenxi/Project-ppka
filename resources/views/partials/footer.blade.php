@@ -1,6 +1,20 @@
-<head>
-    <link rel="stylesheet" href="{{ asset('asset/css/footer.css') }}">
-</head>
+<style>
+  .footer {
+  background-color: #ffffff;
+  padding: 40px 0;
+  border-top: 1px solid #dee2e6;
+  color: var(--text-muted);
+}
+
+.footer a {
+  color: var(--text-dark);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: var(--primary-color);
+}
+</style>
 <footer class="footer">
   <div class="container">
     <div class="row">

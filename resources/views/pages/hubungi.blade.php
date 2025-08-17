@@ -3,9 +3,38 @@
 @section('title', 'Hubungi - Dashboard PPKA')
 
 @section('content')
-<home>
-  <link rel="stylesheet" href="{{ asset('asset/css/hubungi.css') }}">
-</home>
+<style>
+   body {
+      background: linear-gradient(to right, #ffffff, var(--secondary-color));
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .contact-section {
+      padding: 80px 0;
+    }
+
+    .contact-form {
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .form-control:focus {
+      border-color: #f95f35;
+      box-shadow: 0 0 0 0.2rem rgba(249, 95, 53, 0.25);
+    }
+
+    .btn-orange {
+      background-color: #f95f35;
+      color: white;
+      border: none;
+    }
+
+    .btn-orange:hover {
+      background-color: #d94b24;
+    }
+</style>
 
 <section class="contact-section py-5">
   <div class="container">
