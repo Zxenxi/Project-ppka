@@ -53,15 +53,11 @@
         <a class="navbar-brand" href="{{ route('home') }}">
             <img src="{{ asset('asset/logo.png') }}" alt="Logo PPKA" />
         </a>
-
-        <!-- Mobile Toggler -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarNav">
-            <!-- Menu utama -->
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
                     <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="{{ route('home') }}">Home</a>
@@ -74,9 +70,9 @@
                     <a class="nav-link {{ request()->is('layanan') ? 'active' : '' }}"
                         href="{{ route('layanan') }}">Layanan</a>
                 </li>
-                <!-- Dropdown Karir -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle {{ request()->is('lowongan-kerja*') || request()->is('tracer*') ? 'active' : '' }}"
+                    {{-- Updated active state logic to include all career pages --}}
+                    <a class="nav-link dropdown-toggle {{ request()->is('lowongan-kerja*', 'tracer*', 'pengembangan-karir*', 'campus-hiring*') ? 'active' : '' }}"
                         href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Karir & Pengembangan
                     </a>
@@ -85,27 +81,18 @@
                                 href="{{ route('dashboard.lowongan-kerja') }}">Lowongan Kerja</a></li>
                         <li><a class="dropdown-item {{ request()->is('tracer') ? 'active' : '' }}"
                                 href="{{ route('tracer.index') }}">Tracer Study</a></li>
-                        <li><a class="dropdown-item" href="{{ route('dashboard.lowongan-kerja') }}">Bimbingan Karir</a>
-                        </li>
-                        <li><a class="dropdown-item" href="{{ route('dashboard.lowongan-kerja') }}">Campus Hiring</a>
-                        </li>
-                        <li><a class="dropdown-item" href="{{ route('dashboard.lowongan-kerja') }}">Lembaga Sertifikasi
-                                Profesi</a></li>
+                        <li><a class="dropdown-item {{ request()->is('pengembangan-karir') ? 'active' : '' }}"
+                                href="{{ route('pengembangan-karir') }}">Bimbingan Karir</a></li>
+                        {{-- UPDATED: Added the correct route and active state --}}
+                        <li><a class="dropdown-item {{ request()->is('campus-hiring') ? 'active' : '' }}"
+                                href="{{ route('campus-hiring') }}">Campus Hiring</a></li>
                     </ul>
                 </li>
             </ul>
-
-            <!-- Tombol Contact Us -->
             <div class="d-block d-lg-block ms-lg-3">
                 <a class="btn btn-orange {{ request()->is('hubungi') ? 'active' : '' }}"
                     href="{{ route('hubungi.index') }}">Contact Us</a>
             </div>
-        </div>
-
-        <!-- Tombol Contact Us untuk mobile -->
-        <div class="d-none d-lg-none mt-3 w-100 text-center">
-            <a class="btn btn-orange w-100 {{ request()->is('hubungi') ? 'active' : '' }}"
-                href="{{ route('hubungi.index') }}">Contact Us</a>
         </div>
     </div>
 </nav>
