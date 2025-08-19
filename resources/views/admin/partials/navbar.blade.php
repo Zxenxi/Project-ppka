@@ -5,9 +5,16 @@
     padding: 10px 20px;
     position: fixed;
     top: 0;
-    left: 250px; /* Lebar sidebar */
     right: 0;
+    left: 0; /* Changed to 0, content-area will handle margin */
     z-index: 1000;
+    transition: left 0.3s;
+  }
+
+  @media (min-width: 768px) { /* Adjust for larger screens */
+    .navbar-custom {
+      left: 250px; /* On larger screens, position next to sidebar */
+    }
   }
 
   .navbar-custom .nav-link {
@@ -39,9 +46,9 @@
 </style>
 
 <nav class="navbar navbar-custom">
-  <div class="container-fluid">
+  <div class="container-fluid d-flex align-items-center justify-content-between">
     <!-- Toggle for mobile -->
-    <button class="btn btn-toggle-sidebar d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
+    <button class="btn btn-toggle-sidebar sidebar-toggle" type="button">
       <i class="bi bi-list"></i>
     </button>
 

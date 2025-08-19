@@ -89,7 +89,7 @@
                     </ul>
                 </li>
             </ul>
-            <div class="d-block d-lg-block ms-lg-3">
+            <div class="d-block d-lg-block ms-lg-3 pt-1">
                 <a class="btn btn-orange {{ request()->is('hubungi') ? 'active' : '' }}"
                     href="{{ route('hubungi.index') }}">Contact Us</a>
             </div>

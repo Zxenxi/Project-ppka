@@ -46,10 +46,11 @@
 
     /* Content Area */
     .content-area {
-      margin-left: 250px; /* Ensure content does not overlap with the sidebar */
       flex: 1;
       display: flex;
       flex-direction: column;
+      padding-top: 80px; /* To prevent navbar overlap */
+      transition: margin-left 0.3s;
     }
 
     /* Navbar Styling */
@@ -76,9 +77,35 @@
       text-align: center;
     }
 
-    /* Add space for better visuals */
-    .content-area {
-      padding-top: 80px; /* To prevent navbar overlap */
+    /* Responsive adjustments */
+    @media (min-width: 769px) { /* For larger screens */
+      .sidebar {
+        left: 0; /* Sidebar always visible on larger screens */
+      }
+      .content-area {
+        margin-left: 250px; /* Content shifted for sidebar */
+      }
+    }
+
+    @media (max-width: 768px) { /* For smaller screens */
+      .sidebar {
+        position: fixed;
+        left: -250px; /* Hide sidebar by default */
+        transition: left 0.3s;
+      }
+
+      .sidebar.active {
+        left: 0; /* Show sidebar when active */
+      }
+
+      .content-area {
+        margin-left: 0; /* Content takes full width */
+      }
+
+      .navbar .d-flex {
+        width: 100%;
+        justify-content: space-between;
+      }
     }
   </style>
 </head>
@@ -100,5 +127,43 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const sidebar = document.querySelector('.sidebar');
+      const toggleButton = document.querySelector('.sidebar-toggle');
+
+      // Ensure sidebar is hidden on small screens on load
+      if (window.innerWidth <= 768) {
+        sidebar.classList.remove('active'); // Ensure it's not active by default on small screens
+      }
+
+      // Toggle button click event
+      if (toggleButton) {
+        toggleButton.addEventListener('click', function () {
+          sidebar.classList.toggle('active');
+        });
+      }
+
+      // Optional: Hide sidebar when a modal is shown (if it's interfering)
+      const modals = document.querySelectorAll('.modal');
+      modals.forEach(modal => {
+        modal.addEventListener('show.bs.modal', function () {
+          if (window.innerWidth <= 768) {
+            sidebar.classList.remove('active');
+          }
+        });
+      });
+
+      // Optional: Hide sidebar when a navigation link is clicked (if not a full page reload)
+      const sidebarLinks = document.querySelectorAll('.sidebar a');
+      sidebarLinks.forEach(link => {
+        link.addEventListener('click', function () {
+          if (window.innerWidth <= 768) {
+            sidebar.classList.remove('active');
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

@@ -61,7 +61,8 @@
 
         .event-card__media {
             width: 100%;
-            aspect-ratio: 16 / 9;
+            aspect-ratio: 1 / 1;
+            /* aspect-ratio: 16 / 9; */
             background-color: #f0f0f0;
         }
 

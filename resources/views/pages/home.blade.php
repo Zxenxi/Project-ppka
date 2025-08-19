@@ -56,6 +56,16 @@
             margin-bottom: 1rem;
         }
 
+        @media (max-width: 767px) {
+            .hero-section h1 {
+                font-size: 2.25rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
         .nav-pills .nav-link {
             color: var(--ppka-muted);
             font-weight: 600;
@@ -68,7 +78,6 @@
             color: #fff;
         }
 
-        /* NEW: Updated card style with image support */
         .info-card {
             background: #fff;
             border: 1px solid var(--ppka-border);
@@ -88,6 +97,7 @@
 
         .info-card__media {
             width: 100%;
+            height: 100%;
             aspect-ratio: 16 / 10;
             background-color: #f0f0f0;
         }
@@ -114,7 +124,6 @@
             -webkit-box-orient: vertical;
             overflow: hidden;
             margin-bottom: auto;
-            /* Pushes meta to the bottom */
         }
 
         .info-card__meta {
@@ -125,7 +134,6 @@
             border-top: 1px solid var(--ppka-border);
         }
 
-        /* NEW: Style for the "View All" button */
         .btn-view-all {
             font-weight: 600;
             color: var(--ppka-primary);
@@ -197,8 +205,7 @@
                 <div class="tab-pane fade show active" id="pills-jobs" role="tabpanel">
                     <div class="row g-4">
                         @forelse($latestJobs as $job)
-                            <div class="col-lg-4 d-flex align-items-stretch">
-                                {{-- NEW: Card is now a link and includes an image --}}
+                            <div class="col-12 col-md-6 col-lg-4 d-flex align-items-stretch">
                                 <a href="{{ route('dashboard.lowongan-kerja') }}" class="info-card">
                                     <div class="info-card__media">
                                         <img src="{{ asset('storage/' . $job->gambar) }}" class="info-card__img"
@@ -215,7 +222,6 @@
                             <p class="text-center text-muted col-12">Belum ada lowongan kerja terbaru.</p>
                         @endforelse
                     </div>
-                    {{-- NEW: "View All" button added --}}
                     @if ($latestJobs->isNotEmpty())
                         <div class="text-center mt-5">
                             <a href="{{ route('dashboard.lowongan-kerja') }}" class="btn-view-all">Lihat Semua Lowongan <i
@@ -226,8 +232,7 @@
                 <div class="tab-pane fade" id="pills-guidance" role="tabpanel">
                     <div class="row g-4">
                         @forelse($latestGuidance as $item)
-                            <div class="col-lg-4 d-flex align-items-stretch">
-                                {{-- NEW: Card is now a link and includes an image --}}
+                            <div class="col-12 col-md-6 col-lg-4 d-flex align-items-stretch">
                                 <a href="{{ route('pengembangan-karir') }}" class="info-card">
                                     <div class="info-card__media">
                                         <img src="{{ asset('storage/' . $item->poster_image_path) }}" class="info-card__img"
@@ -245,7 +250,6 @@
                             <p class="text-center text-muted col-12">Belum ada bimbingan karir terbaru.</p>
                         @endforelse
                     </div>
-                    {{-- NEW: "View All" button added --}}
                     @if ($latestGuidance->isNotEmpty())
                         <div class="text-center mt-5">
                             <a href="{{ route('pengembangan-karir') }}" class="btn-view-all">Lihat Semua Bimbingan Karir <i
@@ -256,8 +260,7 @@
                 <div class="tab-pane fade" id="pills-hiring" role="tabpanel">
                     <div class="row g-4">
                         @forelse($latestHiring as $item)
-                            <div class="col-lg-4 d-flex align-items-stretch">
-                                {{-- NEW: Card is now a link and includes an image --}}
+                            <div class="col-12 col-md-6 col-lg-4 d-flex align-items-stretch">
                                 <a href="{{ route('campus-hiring') }}" class="info-card">
                                     <div class="info-card__media">
                                         <img src="{{ asset('storage/' . $item->poster_image_path) }}"
@@ -275,7 +278,6 @@
                             <p class="text-center text-muted col-12">Belum ada campus hiring terbaru.</p>
                         @endforelse
                     </div>
-                    {{-- NEW: "View All" button added --}}
                     @if ($latestHiring->isNotEmpty())
                         <div class="text-center mt-5">
                             <a href="{{ route('campus-hiring') }}" class="btn-view-all">Lihat Semua Campus Hiring <i

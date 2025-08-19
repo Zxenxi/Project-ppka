@@ -7,10 +7,14 @@
         height: 100vh;
         position: fixed;
         top: 0;
-        left: 0;
+        left: -250px;
         padding-top: 30px;
         z-index: 10;
         transition: all 0.3s ease;
+    }
+
+    .sidebar.active {
+        left: 0;
     }
 
     .sidebar .nav-link {
@@ -52,7 +56,7 @@
 </style>
 
 <!-- Sidebar -->
-<div class="sidebar d-flex flex-column p-3" id="sidebar">
+<div class="sidebar d-flex flex-column p-3 active" id="sidebar">
     <!-- Logo -->
     <img src="{{ asset('asset/logo.png') }}" alt="Logo" class="logo">
     <!-- Ganti '/path/to/logo.png' dengan path logo yang sesuai -->
